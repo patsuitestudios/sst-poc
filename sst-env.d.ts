@@ -9,6 +9,14 @@ declare module "sst" {
       "name": string
       "type": "sst.aws.Function"
     }
+    "Links": {
+      "linksTable": {
+        "arn": string
+        "endpoint": string
+        "name": string
+      }
+      "type": "sst.sst.Linkable"
+    }
     "LinksApi": {
       "type": "sst.aws.ApiGatewayV2"
       "url": string

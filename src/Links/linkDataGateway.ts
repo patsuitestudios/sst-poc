@@ -38,7 +38,7 @@ const buildItem = (link: Link): Record<string, unknown> => ({
 const client = () =>
     DynamoDBDocumentClient.from(
         new DynamoDBClient({
-            endpoint: Resource.LinksTable.endpoint,
+            endpoint: Resource.Links.linksTable.endpoint,
         })
     );
 

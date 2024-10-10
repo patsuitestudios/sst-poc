@@ -32,6 +32,8 @@ export default $config({
             ],
         }));
 
-        await import('./src/Links/infra');
+        const { Links } = await import('./src/Links/infra');
+
+        return { Links };
     },
 });

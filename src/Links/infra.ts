@@ -20,4 +20,12 @@ const createLinkHandler = new sst.aws.Function('CreateLinkHandler', {
 });
 linksApi.route('POST /', createLinkHandler.arn);
 
-export {};
+const Links = new sst.Linkable('Links', {
+    properties: {
+        linksTable: {
+            ...linksTable.getSSTLink().properties,
+        },
+    },
+});
+
+export { Links };
