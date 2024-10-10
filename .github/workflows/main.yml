@@ -1,0 +1,25 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ '**' ]
+
+jobs:
+  pre-check:
+    name: Pre-Check
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+      - name: NPM install
+        run: npm ci
+      - name: SST install
+        run: npx sst install
+      - name: Type check
+        run: npm run tsc
+      - name: Lint
+        run: npm run lint
+      - name: Unit test
+        run: npm run test
