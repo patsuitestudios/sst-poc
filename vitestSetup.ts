@@ -1,6 +1,6 @@
 import { beforeEach, vi } from 'vitest';
 
-import { testResource } from './src/Components/TestSupport/testResource';
+import { testResource } from './src/TestSupport/testResource';
 
 const fakeResource = new Proxy(
     {},

@@ -3,17 +3,23 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "lint": "eslint . --max-warnings=0  --flag unstable_ts_config",
-    "test": "vitest run",
+    "lint": "eslint . --max-warnings=0 ",
+    "test": "vitest run --silent",
+    "testWatch": "vitest --silent",
     "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
   "dependencies": {
-    "sst": "3.1.61"
+    "@aws-sdk/client-dynamodb": "^3.668.0",
+    "@aws-sdk/lib-dynamodb": "^3.668.0",
+    "@aws-sdk/util-arn-parser": "^3.568.0",
+    "schemawax": "^1.0.12",
+    "sst": "3.1.73"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "@pulumi/pulumi": "^3.136.1",
     "@types/aws-lambda": "8.10.145",
     "@types/eslint": "^9.6.1",
     "@types/eslint__js": "^8.42.3",
@@ -26,8 +32,10 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.10.0",
+    "jest-extended": "^4.0.2",
     "jiti": "^2.1.2",
     "prettier": "^3.3.3",
+    "testcontainers": "^10.13.2",
     "typescript": "5.5.4",
     "typescript-eslint": "^8.8.0",
     "vitest": "^2.1.2"

@@ -5,10 +5,23 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
-    "HelloWorldApi": {
+    "CreateLinkHandler": {
       "name": string
       "type": "sst.aws.Function"
+    }
+    "LinksApi": {
+      "type": "sst.aws.ApiGatewayV2"
       "url": string
+    }
+    "LinksTable": {
+      "arn": string
+      "endpoint": string
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
+    "ListLinksHandler": {
+      "name": string
+      "type": "sst.aws.Function"
     }
   }
 }

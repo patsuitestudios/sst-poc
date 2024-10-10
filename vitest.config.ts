@@ -1,13 +1,16 @@
-import { configDefaults, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
     test: {
-        exclude: [...configDefaults.exclude],
-        // globalSetup: 'vitestSetup.ts',
+        chaiConfig: {
+            truncateThreshold: Infinity,
+        },
+        globals: true,
+        globalSetup: 'vitestGlobalSetup.ts',
         mockReset: true,
+        setupFiles: ['jest-extended/all', 'vitestSetup.ts'],
         // outputFile: 'junit' // TODO: does github actions UI support this?
         // ui: true,
-        setupFiles: ['vitestSetup.ts'],
         // runner: '',
         // reporters: '',
     },
